@@ -15,12 +15,12 @@ kind: Deployment
 metadata:
   name: hello-py
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 2
-      maxSurge: 2
+      maxSurge: 3
   selector:
     matchLabels:
       app: hello-py
