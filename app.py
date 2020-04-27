@@ -1,16 +1,12 @@
 from flask import Flask
-# import boto3
+from ec2_metadata import ec2_metadata
 
 app = Flask('hello-cloudbuild')
-# dynamo_client = boto3.client('dynamodb')
 
 @app.route('/')
 def hello():
-  return "Hello World!\n"
-
-# @app.route('/load-data')
-# def load_data():
-
+  region = ec2_metadata.region
+  return ("Hello World from"+region)
 
   
 if __name__ == '__main__':
