@@ -6,7 +6,7 @@ app = Flask('hello-cloudbuild')
 @app.route('/')
 def hello():
   region = ec2_metadata.region
-  return ("Hello World from"+region)
+  return ("Hello World from "+region)
 
   
 if __name__ == '__main__':
