@@ -10,7 +10,7 @@ def hello():
   res = requests.get('http://169.254.169.254/latest/dynamic/instance-identity/document')
   data = json.loads(res.text)
   region = data['region']
-  return ("Hello World from "+region)
+  return ("Hello from "+region)
 
   
 if __name__ == '__main__':
